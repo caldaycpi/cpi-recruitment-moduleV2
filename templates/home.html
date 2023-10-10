@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CPI CARRIES
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            #banner{
+                height: 360px;
+                width: 100%;
+                margin-bottom: 16px;
+            }
+        </style>
+        <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="http://127.0.0.1:5000/static/banner.avif">
+        <div class="container">
+            <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="lead">
+                        A dynamic and innovative group of professionals that specializes in providing tailored fit Human Resources and IT Solution Services to the unique needs of every fast-growing emerging company in the Philippines. With our expertise, robust commitment to innovation, an extensive network of professionals and sophisticated predictive screening system, we have established ourselves as leaders in the industry.
+                        ​We highly value our employees’ welfare and career development. Likewise, our client needs. Hence, we aim to provide both clients and customers a top-class service and responsive processes to prioritize their needs and set them on track to their success. Our team of dedicated professionals strives to offer seamless and efficient solutions to our clients, ensuring their needs are met with the utmost professionalism and attention to detail. 
+                        We take pride in our ability to adapt to the ever-changing demands of the market, constantly refining our strategies to deliver the best results.
+                    </p>
+                </div>
+                <div class="d-none d-md-block col-md-6">
+                    <img src="http://127.0.0.1:5000/static/12345.avif" style="height: 320px; border-radius: 4px; width: 100%;margin-bottom: 16px;">
+                </div>
+            </div>
+            <h2 class="text-center">JOB OPENINGS</h2>
+            <div>
+                {% for job in jobs %}
+                    {% include 'jobitem.html' %}
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <a href="mailto:calday@gmail.com?subject=Questions%20About%20JOB%20opening&body=My%20name%3A%3CYour%20name%3E%0D%0A%0D%0AMy%20Questions%3A%20%3Cyour%20questions%3E" class="btn btn-primary btn-lg">Contact US</a>
+                {% include 'footer.html' %}
+            </div>
+        </div>
+
+    </body>
+</html>
